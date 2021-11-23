@@ -13,7 +13,7 @@ docker run -p8888:8888 softwareq
 
 Launch a browser at http://localhost:8888
 
-and use the token provided by the `docker run` command above, i.e., the hyperlink that looks like the **bolded** one below
+and use the token provided by the `docker run` command above, i.e., the one in the hyperlink that looks like the **bolded** one below
 
 > To access the notebook, open this file in a browser:
 > 
