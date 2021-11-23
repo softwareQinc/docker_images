@@ -5,6 +5,8 @@ Docker images for our tools
 # Installation
 
 ```bash
+git clone https://github.com/softwareqinc/docker_images
+cd docker_images
 docker build -t softwareq .
 docker run -p8888:8888
 ```
