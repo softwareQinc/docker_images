@@ -8,7 +8,7 @@ Docker images for our tools
 git clone https://github.com/softwareqinc/docker_images
 cd docker_images
 docker build -t softwareq .
-docker run -p8888:8888
+docker run -p8888:8888 softwareq
 ```
 
 Launch a browser at https://localhost:8888
