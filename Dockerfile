@@ -6,6 +6,7 @@ RUN apt-get update && \
     ln -fs /usr/share/zoneinfo/America/Toronto /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
+# Install dependecies
 RUN apt-get install -y \ 
     build-essential \
     python3.6 \
@@ -17,14 +18,21 @@ RUN apt-get install -y \
 
 RUN pip3 -q install pip --upgrade
 
-RUN mkdir -p softwareq/notebooks
-WORKDIR softwareq/
+# Create the main working directory
+RUN mkdir /softwareq
+WORKDIR /softwareq
 COPY . .
 
+# Clone staq and Quantum++, and install the corresponding Python wrappers
+RUN mkdir repos
+WORKDIR /softwareq/repos
+git clone https://github.com/softwareqinc/qpp
+git clone https://github.com/softwareqinc/staq
+RUN pip3 install ./staq/
+RUN pip3 install ./qpp/
+# RUN pip3 install git+https://github.com/softwareqinc/qpp
+# RUN pip3 install git+https://github.com/softwareqinc/staq
+
+WORKDIR /softwareq/notebooks
 RUN pip3 install jupyter
-RUN pip3 install git+https://github.com/softwareqinc/qpp
-RUN pip3 install git+https://github.com/softwareqinc/staq
-
-WORKDIR /src/notebooks
-
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"] 
