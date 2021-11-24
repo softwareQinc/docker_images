@@ -1,0 +1,145 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "69989276",
+   "metadata": {},
+   "source": [
+    "### Import pyqpp, pystaq and numpy into the scope"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "2a9ae463",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from pystaq import *\n",
+    "from pyqpp import *\n",
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6b79b17b",
+   "metadata": {},
+   "source": [
+    "### Build a quantum circuit and apply gates"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "c734ea4c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "circuit = QCircuit(1, 1)  # qubit quantum circuit with one qubit, one classical bit\n",
+    "circuit.gate(gates.H, 0); # Hadamard gate on the first qubit"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "57876d72",
+   "metadata": {},
+   "source": [
+    "### Measure the qubit and store the result in the first classical bit"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "5e8fd9e3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "circuit.measureZ(0, 0);"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "96ee0caf",
+   "metadata": {},
+   "source": [
+    "### Construct an engine"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "9820129f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "engine = QEngine(circuit)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8fa84b7e",
+   "metadata": {},
+   "source": [
+    "### Execute the circuit repeatedly and display the statistics"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "d6507ae9",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[QEngine]\n",
+       "<QCircuit nq: 1, nc: 1, d: 2>\n",
+       "last probs: [0.5]\n",
+       "last dits: [0]\n",
+       "stats:\n",
+       "\treps: 100\n",
+       "\toutcomes: 2\n",
+       "\t[0]: 54\n",
+       "\t[1]: 46"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "engine.execute(100)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "367f6835",
+   "metadata": {},
+   "source": [
+    "How cool is this! 😊"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
