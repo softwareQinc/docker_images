@@ -29,6 +29,6 @@ Finally, launch a browser at the hyperlink marked in **bold** above (the token s
 be different in your case) to connect to the Jupyter environment.
 
 
-## [Example](https://github.com/softwareQinc/docker_images/blob/main/example.ipnyb)
+### [Example](https://github.com/softwareQinc/docker_images/blob/main/example.ipynb)
 
 
