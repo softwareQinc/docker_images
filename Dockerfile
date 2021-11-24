@@ -23,15 +23,16 @@ RUN mkdir /softwareq
 WORKDIR /softwareq
 COPY . .
 
-# Clone staq and Quantum++, and install the corresponding Python wrappers
+# Clone staq and Quantum++ C++ repositories (shallow clone)
 RUN mkdir repos
-RUN git clone https://github.com/softwareqinc/qpp
-RUN git clone https://github.com/softwareqinc/staq
-RUN pip3 install ./staq/
-RUN pip3 install ./qpp/
-# RUN pip3 install git+https://github.com/softwareqinc/qpp
-# RUN pip3 install git+https://github.com/softwareqinc/staq
+RUN git clone --depth=1 https://github.com/softwareqinc/qpp
+RUN git clone --depth=1 https://github.com/softwareqinc/staq
 
+# Install the Quantum++ and staq Ppython wrappers
+RUN pip3 install git+https://github.com/softwareqinc/qpp
+RUN pip3 install git+https://github.com/softwareqinc/staq
+
+# Install the Jupyter server on port 8888
 WORKDIR /softwareq/notebooks
 RUN pip3 install jupyter
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"] 
