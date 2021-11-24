@@ -25,9 +25,8 @@ COPY . .
 
 # Clone staq and Quantum++, and install the corresponding Python wrappers
 RUN mkdir repos
-WORKDIR /softwareq/repos
-git clone https://github.com/softwareqinc/qpp
-git clone https://github.com/softwareqinc/staq
+RUN git clone https://github.com/softwareqinc/qpp
+RUN git clone https://github.com/softwareqinc/staq
 RUN pip3 install ./staq/
 RUN pip3 install ./qpp/
 # RUN pip3 install git+https://github.com/softwareqinc/qpp
