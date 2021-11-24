@@ -14,6 +14,7 @@ RUN apt-get install -y \
     python3-dev \
     libeigen3-dev \
     cmake \
+    vim \
     git
 
 RUN pip3 -q install pip --upgrade
@@ -25,6 +26,7 @@ COPY . .
 
 # Clone staq and Quantum++ C++ repositories (shallow clone)
 RUN mkdir repos
+WORKDIR /softwareq/repos
 RUN git clone --depth=1 https://github.com/softwareqinc/qpp
 RUN git clone --depth=1 https://github.com/softwareqinc/staq
 

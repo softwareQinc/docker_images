@@ -25,10 +25,8 @@ The output should be similar to
 > 
 > **http://127.0.0.1:8888/?token=d9651cb8726cdc87b6093e43d7411d9a234cd43377a93019**
 
-Finally, launch a browser at the hyperlink marked in **bold** above (the token sequence will 
-be different in your case) to connect to the Jupyter environment.
+Finally, to connect to the Jupyter environment, launch a browser at the hyperlink produced by `docker run`, 
+which should be similar to the one  marked in **bold** above 
+(the token sequence will of course be different in your case).
 
-
-See the [notebooks](https://github.com/softwareQinc/docker_images/tree/main/notebooks) directory for examples.
-
-
+See the [notebooks](https://github.com/softwareQinc/docker_images/tree/main/notebooks) directory for Jupyter Notebook examples.
