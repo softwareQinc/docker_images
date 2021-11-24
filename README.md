@@ -29,6 +29,6 @@ Finally, launch a browser at the hyperlink marked in **bold** above (the token s
 be different in your case) to connect to the Jupyter environment.
 
 
-See [examples]()
+See the [notebooks](https://github.com/softwareQinc/docker_images/tree/main/notebooks) directory for examples.
 
 
