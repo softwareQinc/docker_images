@@ -12,7 +12,7 @@ docker build -t softwareq .
 docker run -p8888:8888 softwareq
 ```
 
-The output should be similar to 
+The output of the `docker run` command should be similar to 
 
 > To access the notebook, open this file in a browser:
 > 
@@ -26,7 +26,7 @@ The output should be similar to
 > 
 > **http://127.0.0.1:8888/?token=d9651cb8726cdc87b6093e43d7411d9a234cd43377a93019**
 
-Finally, to connect to the Jupyter environment, launch a browser at the hyperlink produced by `docker run`, 
+To connect to the Jupyter environment, launch a browser at the hyperlink produced by `docker run`, 
 which should be similar to the one  marked in **bold** above 
 (the token sequence will of course be different in your case).
 
