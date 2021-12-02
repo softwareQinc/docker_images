@@ -4,7 +4,7 @@ Docker images for our tools
 
 # Installation
 
-Install [Docker](https://www.docker.com/get-started) then type in a terminal/console
+Install [Docker](https://www.docker.com/get-started), run it, then type in a terminal/console
 
 ```bash
 git clone https://github.com/softwareqinc/docker_images && cd docker_images
