@@ -37,4 +37,6 @@ RUN pip3 install git+https://github.com/softwareqinc/staq
 # Install the Jupyter server on port 8888
 WORKDIR /softwareq/notebooks
 RUN pip3 install jupyter
-CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"] 
+
+WORKDIR /softwareq
+CMD ["jupyter", "notebook", "--config=./conf/jupyter.py"] 
