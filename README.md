@@ -1,14 +1,21 @@
 # docker_images
 
-Docker image for softwareQ tools
+Docker image(s) for softwareQ tools
 
 ## Installation
 
-Install [Docker](https://www.docker.com/get-started), then build the image by
-executing
+
+First install [Docker](https://www.docker.com/get-started), then clone this repository and 
+`cd` into it by executing
+
 
 ```shell
 git clone https://github.com/softwareqinc/docker_images && cd docker_images
+```
+
+Next build the image by executing
+
+```shell
 docker build -t softwareq-tools .
 ```
 
