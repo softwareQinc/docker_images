@@ -20,12 +20,15 @@ RUN useradd -m -c "softwareQ" sq
 RUN echo '%sq ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER sq
 
-# Clone and install Quantum++
+# Clone and install Quantum++ and qpp_qasm
 WORKDIR /home/sq
 RUN git clone --depth 1 --branch main https://github.com/softwareqinc/qpp
 WORKDIR /home/sq/qpp
 RUN cmake -B build -DWITH_UNIT_TESTS=ON -DWITH_EXAMPLES=ON && \
-    sudo cmake --build build --target install
+    cmake --build build --target qpp_qasm && \
+    sudo cmake --build build --target install && \
+    sudo cp build/qpp_qasm /usr/local/bin
+
 USER sq
 WORKDIR /home/sq
 
