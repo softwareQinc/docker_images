@@ -1,6 +1,6 @@
 # docker_images
 
-Docker images for softwareQ tools
+Docker image for softwareQ tools
 
 ## Installation
 
