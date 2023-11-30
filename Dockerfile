@@ -36,7 +36,7 @@ WORKDIR /home/sq
 WORKDIR /home/sq
 RUN git clone --depth 1 --branch main https://github.com/softwareqinc/staq
 WORKDIR /home/sq/staq
-RUN cmake -B build -DSTAQ_INSTALL_SOURCES=ON && \
+RUN cmake -B build -DINSTALL_SOURCES=ON && \
     cmake --build build --target all --parallel 4 && \
     sudo cmake --build build --target install
 USER sq
