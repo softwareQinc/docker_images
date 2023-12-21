@@ -7,7 +7,7 @@ RUN apt-get update && \
     dpkg-reconfigure -f noninteractive tzdata
 
 RUN apt-get install -y build-essential python3.10 python3-pip python3-dev \
-    libeigen3-dev cmake sudo git vim
+    libeigen3-dev cmake sudo git vim libgmp-dev
 
 # Install pyqpp and pystaq
 RUN pip3 -q install pip --upgrade
