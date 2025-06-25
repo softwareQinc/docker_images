@@ -23,7 +23,7 @@ docker build -t softwareq-tools .
 Run the Jupyter server in a container by executing
 
 ```shell
-docker run -p8890:8890 -it --workdir=/home/sq/notebooks softwareq-tools sh -c "jupyter notebook --port=8890 --no-browser --ip=0.0.0.0"
+docker run -p8890:8890 -it --workdir=/home/sq/notebooks softwareq-tools sh -c ". ~/venv/bin/activate && jupyter notebook --port=8890 --no-browser --ip=0.0.0.0"
 ```
 
 The output of the `docker run` command should be similar to
